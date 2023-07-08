@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navHome"
-        android:name="com.example.movieshub.ui.home.view.HomeFragment"
+        android:name="com.example.movieshub.ui.home.view.fragments.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
     <fragment

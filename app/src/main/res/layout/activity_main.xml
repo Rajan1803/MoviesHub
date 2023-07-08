@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
         tools:context=".activities.MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
@@ -33,6 +34,7 @@
             app:itemIconTint="@color/tab_selector"
             app:itemTextColor="@color/tab_selector"
             app:itemRippleColor="@null"
+            android:background="@color/black"
             app:itemIconSize="@dimen/bottom_icon_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

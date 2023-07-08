@@ -31,7 +31,7 @@ class MovieRepository {
             .build()
         val listOfCategories = ArrayList<String>()
         val response = okHttpClient.newCall(request).execute()
-        val jsonString = response.body()?.string()
+        val jsonString = response.body?.string()
 
         if (jsonString != null) {
             listOfCategories.addAll(parseGenres(jsonString))

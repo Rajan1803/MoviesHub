@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.MoviesHub" parent="Theme.Material3.DayNight">
         <!-- Primary brand color. -->
@@ -30,18 +30,18 @@
         <item name="postSplashScreenTheme">@style/Theme.MoviesHub</item>
     </style>
 
-    <!-- TextView Normal Black -->
-    <style name="TextView.Normal.Black" parent="Widget.AppCompat.TextView">
+    <!-- TextView Normal White -->
+    <style name="TextView.Normal.White" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textNormal</item>
         <item name="android:fontFamily">@font/inter</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
-    <!-- TextView Normal SemiBold Black -->
-    <style name="TextView.Normal.SemiBold.Black" parent="Widget.AppCompat.TextView">
+    <!-- TextView Normal SemiBold White -->
+    <style name="TextView.Normal.SemiBold.White" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textNormal</item>
         <item name="android:fontFamily">@font/inter_semibold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <!-- TextView Normal SemiBold Red -->
@@ -51,28 +51,28 @@
         <item name="android:textColor">@color/textRed</item>
     </style>
 
-    <!-- TextView Normal Bold Black -->
-    <style name="TextView.Normal.Bold.Black" parent="Widget.AppCompat.TextView">
+    <!-- TextView Normal Bold White -->
+    <style name="TextView.Normal.Bold.White" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textNormal</item>
         <item name="android:fontFamily">@font/inter_bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <!-- TextView Title -->
     <style name="TextView.Title" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textTitle</item>
         <item name="android:fontFamily">@font/inter_bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <!-- TextView Medium Title -->
-    <style name="TextView.Medium.Black" parent="Widget.AppCompat.TextView">
+    <style name="TextView.Medium.White" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textMedium</item>
         <item name="android:fontFamily">@font/inter_semibold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
-    <!-- TextView SubTitle SemiBold Black -->
+    <!-- TextView SubTitle SemiBold White -->
     <style name="TextView.SubTitle.SemiBold.Black" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textSubTitle</item>
         <item name="android:fontFamily">@font/inter_semibold</item>
@@ -97,6 +97,6 @@
     <style name="TextView.Large" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/textLarge</item>
         <item name="android:fontFamily">@font/inter_bold</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

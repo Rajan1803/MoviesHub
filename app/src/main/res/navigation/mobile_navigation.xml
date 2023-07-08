@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navHome">
+
+    <fragment
+        android:id="@+id/navHome"
+        android:name="com.example.movieshub.ui.home.view.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navMovie"
+        android:name="com.example.movieshub.ui.movies.view.MoviesFragment"
+        android:label="@string/movies"
+        tools:layout="@layout/fragment_movies" />
+    <fragment
+        android:id="@+id/navTVShows"
+        android:name="com.example.movieshub.ui.tvshows.view.TvShowsFragment"
+        android:label="@string/tv_shows"
+        tools:layout="@layout/fragment_tv_shows" />
+</navigation>

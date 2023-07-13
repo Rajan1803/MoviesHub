@@ -1,7 +1,7 @@
 package com.example.movieshub.activities
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -20,12 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initViews()
     }
+
     private fun initViews() {
         setupNavigation()
     }
+
     private fun setupNavigation() {
-        val navHost =
-            supportFragmentManager.findFragmentById(R.id.navHostFragmentContainer) as NavHostFragment
+        val navHost = supportFragmentManager.findFragmentById(R.id.navHostFragmentContainer) as NavHostFragment
         val navController = navHost.navController
         binding.bottomNav.setupWithNavController(navController)
         val appBarConfiguration = AppBarConfiguration(

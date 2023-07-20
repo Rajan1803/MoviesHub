@@ -11,18 +11,18 @@ import com.example.movieshub.R
 import com.example.movieshub.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         initViews()
     }
 
     private fun initViews() {
-
         setupNavigation()
     }
 
@@ -37,4 +37,5 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
+
 }

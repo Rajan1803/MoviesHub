@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieshub.activities.MoviesDetailActivity
 import com.example.movieshub.data.model.response.Movie
 import com.example.movieshub.databinding.RecyclerMovieBinding
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
+
     private val listOfMovies = ArrayList<Movie>()
+    var itemOnClick: ((Movie) -> Unit)? = null
 
     class MovieHolder(val binding: RecyclerMovieBinding) : RecyclerView.ViewHolder(binding.root) {
-
         fun bind(movie: Movie) {
             binding.movie = movie
         }
@@ -27,12 +27,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
             )
         )
         movieHolder.binding.root.setOnClickListener {
-            parent.context.startActivity(
-                MoviesDetailActivity.getIntent(
-                    parent.context,
-                    listOfMovies[movieHolder.adapterPosition]
-                )
-            )
+            itemOnClick?.let { it(listOfMovies[movieHolder.adapterPosition]) }
         }
         return movieHolder
     }

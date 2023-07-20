@@ -18,7 +18,9 @@ class MovieDetailViewModel : ViewModel() {
         viewModelScope.launch {
             val repository = MovieRepository()
             val castResponse = repository.getCast(movieId)
-            castLiveData.postValue(castResponse?.cast)
+            castResponse?.cast?.let { cast ->
+                castLiveData.postValue(cast)
+            }
         }
     }
 

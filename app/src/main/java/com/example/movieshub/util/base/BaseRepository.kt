@@ -1,6 +1,6 @@
-package com.example.movieshub.utils.base
+package com.example.movieshub.util.base
 
-import com.example.movieshub.data.response.ErrorResponse
+import com.example.movieshub.data.model.response.ErrorResponse
 import com.google.gson.Gson
 import retrofit2.Response
 

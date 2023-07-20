@@ -5,38 +5,44 @@ import com.google.gson.annotations.SerializedName
 data class Cast(
 
     @SerializedName("adult")
-    val adult: Boolean = false,
+    val adult: Boolean?,
 
     @SerializedName("cast_id")
-    val castId: Int = 0,
+    val castId: Int?,
 
     @SerializedName("character")
-    val character: String = "",
+    val character: String?,
 
     @SerializedName("credit_id")
-    val creditId: String = "",
+    val creditId: String?,
 
     @SerializedName("gender")
-    val gender: Int = 0,
+    val gender: Int?,
 
     @SerializedName("id")
-    val id: Int = 0,
+    val id: Int?,
 
     @SerializedName("known_for_department")
-    val department: String = "",
+    val department: String?,
 
     @SerializedName("name")
-    val name: String = "",
+    val name: String?,
 
     @SerializedName("order")
-    val order: Int = 0,
+    val order: Int?,
 
     @SerializedName("original_name")
-    val originalName: String = "",
+    val originalName: String?,
 
     @SerializedName("popularity")
-    val popularity: Double = 0.0,
+    val popularity: Double?,
 
     @SerializedName("profile_path")
-    val profilePath: String = ""
-)
+    val profilePath: String?
+
+) {
+
+    val getProfilePath: String
+        get() = "https://image.tmdb.org/t/p/original$profilePath"
+
+}

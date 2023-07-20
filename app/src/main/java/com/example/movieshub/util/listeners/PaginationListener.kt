@@ -1,4 +1,4 @@
-package com.example.movieshub.utils.listeners
+package com.example.movieshub.util.listeners
 
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView

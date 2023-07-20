@@ -1,9 +1,9 @@
 package com.example.movieshub.ui.tvshows.repository
 
 import android.util.Log
-import com.example.movieshub.data.response.MovieResponse
-import com.example.movieshub.utils.Constants
-import com.example.movieshub.utils.base.BaseRepository
+import com.example.movieshub.data.model.response.MovieResponse
+import com.example.movieshub.util.Constants
+import com.example.movieshub.util.base.BaseRepository
 import com.google.gson.Gson
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl

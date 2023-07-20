@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.movieshub.data.response.Movie
-import com.example.movieshub.data.response.MovieResponse
+import com.example.movieshub.data.model.response.Movie
+import com.example.movieshub.data.model.response.MovieResponse
 import com.example.movieshub.ui.tvshows.repository.TVShowsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

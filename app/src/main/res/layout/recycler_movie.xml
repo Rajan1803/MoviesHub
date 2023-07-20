@@ -17,7 +17,7 @@
             android:id="@+id/imgMovie"
             android:layout_width="100dp"
             android:layout_height="0dp"
-            imageBind="@{movie.posterPath}"
+            app:imageUrl="@{movie.getPosterPath}"
             android:contentDescription="@string/movie_poster"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="W,16:9"

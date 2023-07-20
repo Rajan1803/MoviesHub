@@ -8,44 +8,53 @@ import kotlinx.parcelize.Parcelize
 data class Movie(
 
     @SerializedName("adult")
-    val adult: Boolean?,
+    val adult: Boolean? = null,
 
     @SerializedName("backdrop_path")
-    val backdropPath: String?,
+    val backdropPath: String? = null,
 
     @SerializedName("genre_ids")
-    val genreIds: List<Int>?,
+    val genreIds: List<Int?>? = null,
 
     @SerializedName("id")
-    val id: Int = 0,
+    val id: Int? = null,
 
     @SerializedName("original_language")
-    val originalLanguage: String?,
+    val originalLanguage: String? = null,
 
     @SerializedName("original_title")
-    val originalTitle: String?,
+    val originalTitle: String? = null,
 
     @SerializedName("overview")
-    val overview: String?,
+    val overview: String? = null,
 
     @SerializedName("popularity")
-    val popularity: Double = 0.0,
+    val popularity: Double? = null,
 
     @SerializedName("poster_path")
-    val posterPath: String?,
+    val posterPath: String? = null,
 
     @SerializedName("release_date")
-    val releaseDate: String?,
+    val releaseDate: String? = null,
 
-    @SerializedName("title")
-    val title: String?,
+    @SerializedName(value = "title", alternate = ["name"])
+    val title: String? = null,
 
     @SerializedName("video")
-    val video: Boolean = false,
+    val video: Boolean? = null,
 
     @SerializedName("vote_average")
-    val voteAverage: Double = 0.0,
+    val voteAverage: Double? = null,
 
     @SerializedName("vote_count")
-    val voteCount: Int = 0
-) : Parcelable
+    val voteCount: Int? = null
+
+) : Parcelable {
+
+    val getBackdropPath: String
+        get() = "https://image.tmdb.org/t/p/original$backdropPath"
+
+    val getPosterPath: String
+        get() = "https://image.tmdb.org/t/p/original$posterPath"
+
+}

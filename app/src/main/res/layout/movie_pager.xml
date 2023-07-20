@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="movie"
             type="com.example.movieshub.data.model.response.Movie" />
@@ -16,7 +15,7 @@
 
         <ImageView
             android:id="@+id/imgPoster"
-            imageBind="@{movie.posterPath}"
+            app:imageUrl="@{movie.getPosterPath}"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:contentDescription="@string/movie_poster"
@@ -54,7 +53,7 @@
 
         <TextView
             android:id="@+id/txtVote"
-            intToString="@{movie.voteCount}"
+            textFromInt="@{movie.voteCount}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"

@@ -13,7 +13,7 @@ import com.example.movieshub.databinding.FragmentTvShowsBinding
 import com.example.movieshub.ui.movies.adapter.MovieAdapter
 import com.example.movieshub.ui.tvshows.repository.TVShowsRepository
 import com.example.movieshub.ui.tvshows.viewmodel.TVShowsVM
-import com.example.movieshub.utils.listeners.PaginationListener
+import com.example.movieshub.util.listeners.PaginationListener
 
 class TvShowsFragment : Fragment() {
 

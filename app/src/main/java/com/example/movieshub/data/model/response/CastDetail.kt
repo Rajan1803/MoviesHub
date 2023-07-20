@@ -5,8 +5,9 @@ import com.google.gson.annotations.SerializedName
 data class CastDetail(
 
     @SerializedName("cast")
-    val cast: List<Cast> = listOf(),
+    val cast: List<Cast>?,
 
     @SerializedName("id")
-    val id: Int = 0
+    val id: Int?
+
 )

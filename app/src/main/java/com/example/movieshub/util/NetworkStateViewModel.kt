@@ -41,4 +41,5 @@ class NetworkStateViewModel(private val application: Application) : AndroidViewM
             application.getSystemService(ConnectivityManager::class.java) as ConnectivityManager
         connectivityManager.requestNetwork(networkRequest, networkCallback)
     }
+
 }

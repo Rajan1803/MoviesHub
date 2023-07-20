@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.movieshub.data.response.Movie
-import com.example.movieshub.data.response.MovieResponse
+import com.example.movieshub.data.model.response.Movie
+import com.example.movieshub.data.model.response.MovieResponse
 import com.example.movieshub.ui.movies.respository.MoviesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,11 +27,11 @@ class MoviesVM(private val repository: MoviesRepository) : ViewModel() {
         get() = false
     private var currentPage: Int = 0
 
-    fun getMovies() {
+    fun getMovies(category: String) {
         viewModelScope.launch(Dispatchers.IO) {
             _isLoading.postValue(true)
             currentPage++
-            val movieResult= repository.getMovies(currentPage = currentPage)
+            val movieResult= repository.getMovies(category = category, currentPage = currentPage)
             withContext(Dispatchers.Main){
                 _isLoading.postValue(false)
                 when {
@@ -65,4 +65,5 @@ class MoviesVM(private val repository: MoviesRepository) : ViewModel() {
             return MoviesVM(repository) as T
         }
     }
+
 }

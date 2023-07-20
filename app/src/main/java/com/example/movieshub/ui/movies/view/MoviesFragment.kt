@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.movieshub.activities.MoviesDetailActivity
 import com.example.movieshub.ui.movies.adapter.MovieAdapter
 import com.example.movieshub.databinding.FragmentMoviesBinding
-import com.example.movieshub.utils.listeners.PaginationListener
+import com.example.movieshub.util.listeners.PaginationListener
 import com.example.movieshub.ui.movies.respository.MoviesRepository
 import com.example.movieshub.ui.movies.viewmodel.MoviesVM
 
@@ -20,6 +22,8 @@ class MoviesFragment : Fragment() {
     private val viewModel by activityViewModels<MoviesVM> {
         MoviesVM.Factory(MoviesRepository())
     }
+    private lateinit var category: String
+    private val args: MoviesFragmentArgs by navArgs()
     private val movieAdapter by lazy { MovieAdapter() }
 
     override fun onCreateView(
@@ -36,9 +40,11 @@ class MoviesFragment : Fragment() {
     }
 
     private fun initViews() {
+        category = args.category
+        viewModel.getMovies(category)
         setUpRecyclerView()
         setUpViewModel()
-        viewModel.getMovies()
+        viewModel.getMovies(category = category)
     }
 
     private fun setUpViewModel() {
@@ -57,6 +63,14 @@ class MoviesFragment : Fragment() {
 
     private fun setUpRecyclerView() {
         binding.rvMovies.apply {
+            movieAdapter.itemOnClick = { movie ->
+                startActivity(
+                    MoviesDetailActivity.getIntent(
+                        context,
+                        movie
+                    )
+                )
+            }
             adapter = movieAdapter
             val gridLayoutManager = GridLayoutManager(context, 3)
             layoutManager = gridLayoutManager
@@ -68,7 +82,7 @@ class MoviesFragment : Fragment() {
                         return viewModel.isLoading.value ?: false
                     }
                 override fun loadMoreItems() {
-                    viewModel.getMovies()
+                    viewModel.getMovies(category = category)
                 }
             })
         }

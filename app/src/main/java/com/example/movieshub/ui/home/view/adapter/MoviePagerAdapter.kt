@@ -11,7 +11,7 @@ class MoviePagerAdapter : RecyclerView.Adapter<MoviePagerAdapter.MovieViewHolder
 
     private val listOfMovies = ArrayList<Movie>()
 
-    class MovieViewHolder(val binding: MoviePagerBinding) : RecyclerView.ViewHolder(binding.root) {
+    class MovieViewHolder(private val binding: MoviePagerBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             binding.movie = movie
         }

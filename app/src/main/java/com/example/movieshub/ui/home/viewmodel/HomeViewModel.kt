@@ -3,15 +3,15 @@ package com.example.movieshub.ui.home.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.movieshub.data.model.response.MovieResponse
 import com.example.movieshub.ui.home.repository.MovieRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(private val repository: MovieRepository) : ViewModel() {
 
-    private val repository = MovieRepository()
     private val popularMoviesLiveData = MutableLiveData<MovieResponse?>()
     val popularMovies: LiveData<MovieResponse?>
         get() = popularMoviesLiveData
@@ -41,6 +41,13 @@ class HomeViewModel : ViewModel() {
     fun getCategoriesDetail() {
         viewModelScope.launch(Dispatchers.IO) {
             categoryLiveData.postValue(repository.getCategories())
+        }
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    class Factory(private val repository: MovieRepository) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return HomeViewModel(repository) as T
         }
     }
 

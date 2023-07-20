@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -22,7 +23,17 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", "AUTH_TOKEN", '"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YjVkZjA4Y2YwNzA3MWZlYjJiNTk4MjNhNTk1NTI5ZSIsInN1YiI6IjY0YTZhOWNjMDdmYWEyMDExZTAzMjcxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WL4IeK7VnZ7nL7nIToSoF5vG0jxqeW1VQKFKZk3BIcE"')
+            buildConfigField("String", "BASE_IMAGE_PATH", '"https://image.tmdb.org/t/p/original"')
+            buildConfigField("String", "CATEGORY_URL", '"https://api.themoviedb.org/3/movie/14577"')
+        }
         release {
+            buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", "AUTH_TOKEN", '"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YjVkZjA4Y2YwNzA3MWZlYjJiNTk4MjNhNTk1NTI5ZSIsInN1YiI6IjY0YTZhOWNjMDdmYWEyMDExZTAzMjcxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WL4IeK7VnZ7nL7nIToSoF5vG0jxqeW1VQKFKZk3BIcE"')
+            buildConfigField("String", "BASE_IMAGE_PATH", '"https://image.tmdb.org/t/p/original"')
+            buildConfigField("String", "CATEGORY_URL", '"https://api.themoviedb.org/3/movie/14577"')
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -54,4 +65,5 @@ dependencies {
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
 }

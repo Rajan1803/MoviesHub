@@ -113,13 +113,14 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtvTime"
                 android:layout_width="94dp"
-                android:layout_height="16dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginBottom="8dp"
                 android:drawableStart="@drawable/time"
                 android:text="@string/time"
                 android:textColor="@color/white"
                 android:translationZ="2dp"
+                android:lines="1"
                 app:layout_constraintBottom_toTopOf="@id/txtvLanguage"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -147,17 +148,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rattingBar" />
 
-            <TextView
-                android:id="@+id/txtvVideos"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/videos"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="@id/txtvDescription"
-                app:layout_constraintStart_toStartOf="@id/txtvDescription"
-                app:layout_constraintTop_toBottomOf="@id/txtvDescription" />
+<!--            <TextView-->
+<!--                android:id="@+id/txtvVideos"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:text="@string/videos"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="24sp"-->
+<!--                 />-->
 
             <TextView
                 android:id="@+id/txtvCast"
@@ -167,9 +166,9 @@
                 android:text="@string/cast"
                 android:textColor="@color/white"
                 android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="@id/txtvVideos"
-                app:layout_constraintStart_toStartOf="@id/txtvVideos"
-                app:layout_constraintTop_toBottomOf="@id/txtvVideos" />
+                app:layout_constraintEnd_toEndOf="@id/txtvDescription"
+                app:layout_constraintStart_toStartOf="@id/txtvDescription"
+                app:layout_constraintTop_toBottomOf="@id/txtvDescription"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCast"

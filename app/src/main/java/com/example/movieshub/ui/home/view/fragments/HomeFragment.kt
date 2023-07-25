@@ -145,6 +145,7 @@ class HomeFragment : Fragment() {
                 progressBar.visibility = View.GONE
                 viewGroup.visibility = View.GONE
                 txtvNoInternet.visibility = View.VISIBLE
+                noInternetAnimation.visibility = View.VISIBLE
             }
         } else {
             setViewsOnNetworkAvailable()
@@ -155,6 +156,7 @@ class HomeFragment : Fragment() {
         binding.apply {
             viewGroup.visibility = View.GONE
             txtvNoInternet.visibility = View.VISIBLE
+            noInternetAnimation.visibility = View.VISIBLE
         }
     }
 
@@ -163,6 +165,7 @@ class HomeFragment : Fragment() {
             viewGroup.visibility = View.VISIBLE
             progressBar.visibility = View.VISIBLE
             txtvNoInternet.visibility = View.GONE
+            noInternetAnimation.visibility = View.GONE
         }
         viewModel.apply {
             getPopularMovieList()
